@@ -17,12 +17,14 @@ public class Lab05 {
 
     private static int mazeSolution(int from, int to, int pred[], int steps[]) {
         int i, n, node;
+        //System.out.println(Arrays.toString(pred));
         // first count how many edges between the end and the start
         node = to;
         n = 1;
         while ((node = pred[node]) != from) {
             n++;
         }
+
         // then reverse pred[] array to steps[] array
         node = to;
         i = n;
@@ -30,9 +32,26 @@ public class Lab05 {
             steps[i--] = node;
             node = pred[node];
         }
-        
+
         // include also the end vertex
         return (n + 1);
+
+    }
+
+    private static boolean contains(int[] array, int value){
+        int answer = 0;
+        for(int i=0; i<array.length;i++){
+            if(array[i]==value){
+                answer+=1;
+            }
+        }
+
+        if(answer>0){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     /* find a maze solution */
@@ -58,8 +77,6 @@ public class Lab05 {
 //        // include also the end vertex
 //        return (n + 1);
 //    }
-
-
     private final static int FROM = 0;
     private final static int TO = 9;
 
@@ -68,7 +85,7 @@ public class Lab05 {
      */
     public static void main(String[] args) throws FileNotFoundException {
         Graph g = new Graph();
-        String FILE = args[0];
+      	String FILE = args[0];
 
         // read the graph. and do the depth-first search
         System.out.println("Graph Adjacent list");
@@ -83,10 +100,19 @@ public class Lab05 {
         int steps[] = new int[g.nodes()];
         System.out.println("\nMaze solution from " + FROM + " to " + TO);;
         int n = mazeSolution(FROM, TO, pred, steps);
-        for (int i = 0; i < n; i++) {
-            System.out.print(steps[i] + " ");
+        //System.out.println("n"+n);
+        //System.out.println(Arrays.toString(steps));
+        if(g.getStory().contains(TO)){
+
+                for (int i = 0; i < n; i++) {
+                    System.out.print(steps[i] + " ");
+                }
+                System.out.println();
         }
-        System.out.println();
+        else{
+            System.out.println("This maze doesn't have solution");
+        }
     }
+
 
 }

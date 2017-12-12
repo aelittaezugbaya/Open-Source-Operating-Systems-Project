@@ -21,10 +21,12 @@ public class Graph {
 
     private ArrayList<Node> graph;
     private int index;
+    private ArrayList<Integer> story;
 
     public Graph() {
         this.graph = new ArrayList<Node>();
         this.index = 0;
+        this.story= new ArrayList<>();
     }
 
     /* tell how many nodes a graph has */
@@ -80,7 +82,7 @@ public class Graph {
           Node node;
           visited[start]=true;
           node= this.graph.get(start).getNext();
-          
+          this.story.add(start);
           while( node!=null){
               if(!visited[node.getValue()]){
                   int i = node.getValue();
@@ -89,7 +91,10 @@ public class Graph {
               }
               node= node.getNext();
           }
-//          System.out.println(Arrays.toString(pred));
-    }
+          //System.out.println(Arrays.toString(pred));
 
+    }
+     public ArrayList<Integer> getStory(){
+        return this.story;
+     }
 }
