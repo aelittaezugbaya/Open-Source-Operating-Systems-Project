@@ -59,6 +59,7 @@ public class Lab05 {
 //        return (n + 1);
 //    }
 
+//    private final static String FILE = "maze.grh";
     private final static int FROM = 0;
     private final static int TO = 15;
 
@@ -67,8 +68,7 @@ public class Lab05 {
      */
     public static void main(String[] args) throws FileNotFoundException {
         Graph g = new Graph();
-        String FILE = args[0];
-        System.out.println(args[0]);
+	String FILE = "/home1-3/a/aelittae/osos/lab05_1/maze.grh";
         // read the graph. and do the depth-first search
         System.out.println("Graph Adjacent list");
         g.readGraph(new File(FILE));
