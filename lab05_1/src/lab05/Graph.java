@@ -68,7 +68,9 @@ public class Graph {
                 System.out.print(node.getNext().getValue() + " ");
                 node = node.getNext();
             }
-            System.out.println("");
+            if(i!=length-1){
+                System.out.println("");
+            }
         }
 
     }

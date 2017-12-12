@@ -88,7 +88,7 @@ public class Lab05 {
       	String FILE = args[0];
 
         // read the graph. and do the depth-first search
-        System.out.println("Graph Adjacent list");
+       // System.out.println("Graph Adjacent list");
         g.readGraph(new File(FILE));
         g.printGraph();
 
@@ -107,7 +107,7 @@ public class Lab05 {
                 for (int i = 0; i < n; i++) {
                     System.out.print(steps[i] + " ");
                 }
-                System.out.println();
+		System.out.println(" ");             
         }
         else{
             System.out.println("This maze doesn't have solution");
