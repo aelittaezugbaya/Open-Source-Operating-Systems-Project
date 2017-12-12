@@ -89,7 +89,7 @@ public class Graph {
               }
               node= node.getNext();
           }
-          System.out.println(Arrays.toString(pred));
+//          System.out.println(Arrays.toString(pred));
     }
 
 }

@@ -32,5 +32,5 @@ while currentVertexCount < vertexCount:
     currentVertexCount = calculateVertices(vertices)
 
 for index, x in enumerate(vertices):
-    print('{}: {}'.format(index, ' '.join(str(y) for y in x) ) )
+    print('{} {}'.format(index, ' '.join(str(y) for y in x) ) )
 
